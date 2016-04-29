@@ -1,0 +1,44 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 显示内容的布局 -->
+
+    <RelativeLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- 内容分类导航菜tab单条布局 -->
+
+        <com.example.administrator.market.widget.PagerTab
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="42dip"
+            android:background="@drawable/bg_tab" />
+        <!-- 内容主界面布局，且内容主界面必须是抽屉菜单的前一个元素，顺序不可颠倒 -->
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tabs"
+            tools:context=".MainActivity" />
+    </RelativeLayout>
+
+<!--  显示左侧抽屉菜单布局 
+从左侧开始，使用android:layout_gravity="start"，
+从右侧开始，使用android:layout_gravity="end" -->
+    
+    <FrameLayout
+        android:id="@+id/left_drawer"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/bg_tab" >
+
+    </FrameLayout>
+
+</android.support.v4.widget.DrawerLayout>
